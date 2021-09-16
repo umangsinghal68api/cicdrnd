@@ -4,7 +4,7 @@ global with sharing class AccountManager {
    
     @HttpGet
     global static account getAccount() {
-                
+               //cheking 
         RestRequest request = RestContext.request;
         
         String accountId = request.requestURI.substring(request.requestURI.lastIndexOf('/')-18,
