@@ -5,6 +5,7 @@ global with sharing class AccountManager {
     @HttpGet
     global static account getAccount() {
                //changes in master
+        //changes in qa branch 
         RestRequest request = RestContext.request;
         
         String accountId = request.requestURI.substring(request.requestURI.lastIndexOf('/')-18,
@@ -13,7 +14,6 @@ global with sharing class AccountManager {
         List<contact> co = [select id, name from contact where account.id = :accountId];
         system.debug('** a[0]= '+ a[0]);
         return a[0];
-
     }
 
 }
